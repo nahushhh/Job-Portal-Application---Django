@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}User Register Form{% endblock %}
+
+{% block content %}
+<h1 class="row justify-content-center">User Register</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form class="row g-3" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-12">
+          <label for="userEmail" class="form-label">Email</label>
+          <input
+            type="text"
+            name="userEmail"
+            class="form-control"
+            id="userEmail"
+            placeholder=""
+          />
+        </div>
+        <div class="col-12">
+          <label for="userPass" class="form-label">Password</label>
+          <input
+            type="text"
+            name="userPass"
+            class="form-control"
+            id="userPass"
+            placeholder=""
+          />
+        </div>
+        <div class="col-12">
+            <label for="userName" class="form-label">Name</label>
+            <input
+              type="text"
+              name="userName"
+              class="form-control"
+              id="userName"
+              placeholder=""
+            />
+          </div>
+          <div class="col-12">
+            <label for="userAbout" class="form-label">About</label>
+            <textarea
+              class="form-control"
+              id="userAbout"
+              name="userAbout"
+              rows="4"
+              placeholder="Briefly describe yourself"
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <label for="userEdu" class="form-label">Education</label>
+            <textarea
+              class="form-control"
+              id="userEdu"
+              name="userEdu"
+              rows="4"
+              placeholder="Enter your qualifications"
+            ></textarea>
+          </div>
+            <div class="col-12">
+                <label for="skills" class="form-label">Skills</label>
+                <select name="skills" class="form-control" id="skills" multiple required>
+                    <!-- Technical Skills -->
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="SQL">SQL</option>
+                    <option value="C++">C++</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Swift">Swift</option>
+                    <!-- Non-Technical Skills -->
+                    <option value="Communication">Communication</option>
+                    <option value="Leadership">Leadership</option>
+                    <option value="Teamwork">Teamwork</option>
+                    <option value="Problem Solving">Problem Solving</option>
+                    <option value="Time Management">Time Management</option>
+                    <option value="Adaptability">Adaptability</option>
+                    <option value="Critical Thinking">Critical Thinking</option>
+                    <option value="Creativity">Creativity</option>
+                    <option value="Conflict Resolution">Conflict Resolution</option>
+                    <option value="Public Speaking">Public Speaking</option>
+                </select>
+              </div>
+          </div>
+          <div class="col-12">
+            <label for="userRes" class="form-label">Upload Resume</label>
+            <input
+              type="file"
+              name="userRes"
+              class="form-control"
+              id="userRes"
+              placeholder=""
+            />
+          </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+        <br>
+    </div>
+  </div>
+</div>
+{% endblock %} 

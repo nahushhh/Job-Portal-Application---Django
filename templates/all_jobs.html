@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block  title%} All Jobs Page {% endblock  %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        {% if company_name %}
+        <a class="navbar-brand" href="#">{{company_name}}</a>
+        {% endif %}
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/post-job">Post Job</a>
+          <a class="nav-link" href="#">Filter</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div class="accordion" id="accordionExample">
+    {% if jobs %}
+      {% for job in jobs %}
+      <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              {{job.job_role_id}} - {{job.job_role_name}} ({{job.job_role_type}}, {{job.job_role_mode}})
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <b>Compnay</b> - {{job.job_role_company}} | <b>Location</b> - {{job.job_role_location}}<br>
+              <b>Salary</b> - Rs. {{job.job_role_salary}}<br>
+              <b>Qualifications</b> - {{job.job_role_qualifications}}<br><br>
+              
+              <b>Job Description</b> - {{ job.job_role_desc }}<br>
+              <b>Skills</b> - {{ job.job_role_skills }}<br><br>
+
+              <b>Posted </b> - {{job.job_role_posted}}<br>
+              <b>Deadline </b> - {{job.job_role_deadline}}
+
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}

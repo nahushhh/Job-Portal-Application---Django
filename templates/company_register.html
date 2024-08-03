@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Job Register Form{% endblock %}
+
+{% block content %}
+<h1 class="row justify-content-center">Company Login</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form class="row g-3" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+          <label for="companyEmail" class="form-label">Email</label>
+          <input
+            type="text"
+            name="companyEmail"
+            class="form-control"
+            id="companyEmail"
+            placeholder=""
+          />
+        </div>
+        <div class="col-12">
+          <label for="companyPass" class="form-label">Password</label>
+          <input
+            type="text"
+            name="companyPass"
+            class="form-control"
+            id="companyPass"
+            placeholder=""
+          />
+        </div>
+        <div class="col-12">
+            <label for="companyName" class="form-label">Name</label>
+            <input
+              type="text"
+              name="companyName"
+              class="form-control"
+              id="companyPass"
+              placeholder=""
+            />
+          </div>
+          <div class="col-12">
+            <label for="companyAbout" class="form-label">About</label>
+            <textarea
+              class="form-control"
+              id="companyAbout"
+              name="companyAbout"
+              rows="4"
+              placeholder="Briefly describe your company"
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <label for="companyLink" class="form-label">Website Link</label>
+            <input
+              type="text"
+              name="companyLink"
+              class="form-control"
+              id="companyPass"
+              placeholder=""
+            />
+          </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+        <br>
+    </div>
+  </div>
+</div>
+{% endblock %} 

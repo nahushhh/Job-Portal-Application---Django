@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Job Register Form{% endblock %}
+
+{% block content %}
+<h1 class="row justify-content-center">Job Register Form</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form class="row g-3" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+          <label for="inputJobRole" class="form-label">Job Role</label>
+          <input
+            type="text"
+            name="jobRole"
+            class="form-control"
+            id="inputJobRole"
+            placeholder=""
+          />
+        </div>
+        <div class="col-12">
+          <label for="inputJobCompany" class="form-label">Company</label>
+          <input
+            type="text"
+            name="jobCompany"
+            class="form-control"
+            id="inputJobCompany"
+            placeholder=""
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="inputTextarea" class="form-label">Job Description</label>
+          <textarea
+            class="form-control"
+            name="jobDesc"
+            id="inputTextarea"
+            rows="4"
+            placeholder="Enter your message here"
+          ></textarea>
+        </div>
+
+        <div class="col-12">
+          <label for="inputSkillsarea" class="form-label">Job Skills</label>
+          <textarea
+            class="form-control"
+            name="jobSkills"
+            id="inputSkillsarea"
+            rows="4"
+            placeholder="Enter your message here"
+          ></textarea>
+        </div>
+
+        <div class="col-12">
+          <label for="inputJobLocation" class="form-label">Job Location</label>
+          <input
+            type="text"
+            class="form-control"
+            name="jobLocation"
+            id="inputJobLocation"
+            placeholder="Enter job location"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="inputQualifications" class="form-label">Qualifications</label>
+          <textarea
+            class="form-control"
+            id="inputQualifications"
+            name="qualification"
+            rows="4"
+            placeholder="Enter job qualifications"
+          ></textarea>
+        </div>
+
+        <div class="col-12">
+          <label for="inputSalary" class="form-label">Salary</label>
+          <input
+            type="number"
+            class="form-control"
+            name="jobSalary"
+            id="inputSalary"
+            placeholder="Enter salary"
+            step="1"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="inputDeadline" class="form-label">Application Deadline</label>
+          <input
+            type="datetime-local"
+            class="form-control"
+            id="inputDeadline"
+            name="deadline"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="inputRoleType" class="form-label">Role Type</label>
+          <select id="inputRoleType" class="form-select" name="roleType">
+            <option value="" selected>Select role type</option>
+            <option value="FT">Full Time</option>
+            <option value="PT">Part Time</option>
+            <option value="INT">Internship</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label for="inputJobMode" class="form-label">Job Mode</label>
+          <select id="inputJobMode" class="form-select" name="roleMode">
+            <option value="" selected>Select job mode</option>
+            <option value="R">Remote</option>
+            <option value="H">Hybrid</option>
+            <option value="IP">In Person</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

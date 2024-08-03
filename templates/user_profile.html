@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block  title%} All Jobs Page {% endblock  %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ user.user_name }}</h1>
+    <p>Email: {{ user.user_email }}</p>
+    <p>Description: {{ user.user_desc }}</p>
+    <p>Education: {{ user.user_education }}</p>
+    <p>
+        Resume: 
+        {% if user.user_resume %}
+            <a href="{{ user.user_resume.url }}" target="_blank">Download Resume</a>
+        {% else %}
+            No Resume
+        {% endif %}
+    </p>
+</div>
+
+{% endblock content %}
